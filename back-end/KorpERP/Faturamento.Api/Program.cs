@@ -1,4 +1,5 @@
 using Faturamento.Api.Middlewares;
+using Faturamento.Infra.Data.Data;
 using Faturamento.Infra.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +25,12 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<FaturamentoDbContext>();
+    db.Database.EnsureCreated();
+}
 
 app.UseCors("AllowAngular");
 

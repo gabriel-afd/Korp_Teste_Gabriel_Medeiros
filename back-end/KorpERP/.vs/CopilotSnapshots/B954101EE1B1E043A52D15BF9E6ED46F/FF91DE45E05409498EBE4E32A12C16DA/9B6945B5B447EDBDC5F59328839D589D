@@ -1,0 +1,24 @@
+﻿FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+WORKDIR /app
+EXPOSE 8080
+
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+WORKDIR /src
+
+COPY ["Faturamento.Api/Faturamento.Api.csproj", "Faturamento.Api/"]
+COPY ["Faturamento.Application/Faturamento.Application.csproj", "Faturamento.Application/"]
+COPY ["Faturamento.Domain/Faturamento.Domain.csproj", "Faturamento.Domain/"]
+COPY ["Faturamento.Infra.Data/Faturamento.Infra.Data.csproj", "Faturamento.Infra.Data/"]
+COPY ["Faturamento.Infra.IoC/Faturamento.Infra.IoC.csproj", "Faturamento.Infra.IoC/"]
+
+RUN dotnet restore "Faturamento.Api/Faturamento.Api.csproj"
+
+COPY . .
+WORKDIR "/src/Faturamento.Api"
+RUN dotnet build -c Release -o /app/build
+RUN dotnet publish -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=build /app/publish .
+ENTRYPOINT ["dotnet", "Faturamento.Api.dll"]

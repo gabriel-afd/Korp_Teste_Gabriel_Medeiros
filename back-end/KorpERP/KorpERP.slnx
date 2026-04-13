@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Itens de Solução/">
+    <File Path="docker-compose.yml" />
+  </Folder>
   <Project Path="Estoque.Application/Estoque.Application.csproj" />
   <Project Path="Estoque.Domain/Estoque.Domain.csproj" />
   <Project Path="Estoque.Infra.Data/Estoque.Infra.Data.csproj" />

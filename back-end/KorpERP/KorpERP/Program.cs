@@ -1,4 +1,5 @@
 using Estoque.Api.Consumers;
+using Estoque.Infra.Data.Data;
 using Estoque.Infra.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,6 +27,12 @@ builder.Services.AddCors(options =>
 builder.Services.AddHostedService<NotaImpressaConsumer>();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<EstoqueDbContext>();
+    db.Database.EnsureCreated();
+}
 
 app.UseCors("AllowAngular");
 

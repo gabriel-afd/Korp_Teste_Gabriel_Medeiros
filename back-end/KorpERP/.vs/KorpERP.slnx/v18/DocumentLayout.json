@@ -1,7 +1,51 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "F:\\KorpERP\\back-end\\KorpERP\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8B4951C8-B34A-1A70-FB56-D2AA8CB13FDB}|KorpERP\\Estoque.Api.csproj|f:\\korperp\\back-end\\korperp\\korperp\\consumers\\notaimpressaconsumer .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B4951C8-B34A-1A70-FB56-D2AA8CB13FDB}|KorpERP\\Estoque.Api.csproj|solutionrelative:korperp\\consumers\\notaimpressaconsumer .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2322DB5E-50E5-F0E2-671D-0621890B78F8}|Faturamento.Infra.IoC\\Faturamento.Infra.IoC.csproj|f:\\korperp\\back-end\\korperp\\faturamento.infra.ioc\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2322DB5E-50E5-F0E2-671D-0621890B78F8}|Faturamento.Infra.IoC\\Faturamento.Infra.IoC.csproj|solutionrelative:faturamento.infra.ioc\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D8B8D8-4999-4285-A889-71751789BD61}|Itens de Solu\u00E7\u00E3o{51D8B8D8-4999-4285-A889-71751789BD61}|F:\\KorpERP\\back-end\\KorpERP\\docker-compose.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
+      "RelativeMoniker": "D:0:0:{51D8B8D8-4999-4285-A889-71751789BD61}|Itens de Solu\u00E7\u00E3o{51D8B8D8-4999-4285-A889-71751789BD61}|solutionrelative:docker-compose.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5471D68-728C-61E2-BB8D-03AAB592409C}|Faturamento.Api\\Faturamento.Api.csproj|f:\\korperp\\back-end\\korperp\\faturamento.api\\dockerfile\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{F5471D68-728C-61E2-BB8D-03AAB592409C}|Faturamento.Api\\Faturamento.Api.csproj|solutionrelative:faturamento.api\\dockerfile\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B4951C8-B34A-1A70-FB56-D2AA8CB13FDB}|KorpERP\\Estoque.Api.csproj|f:\\korperp\\back-end\\korperp\\korperp\\dockerfile\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8B4951C8-B34A-1A70-FB56-D2AA8CB13FDB}|KorpERP\\Estoque.Api.csproj|solutionrelative:korperp\\dockerfile\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B4951C8-B34A-1A70-FB56-D2AA8CB13FDB}|KorpERP\\Estoque.Api.csproj|f:\\korperp\\back-end\\korperp\\korperp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8B4951C8-B34A-1A70-FB56-D2AA8CB13FDB}|KorpERP\\Estoque.Api.csproj|solutionrelative:korperp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5471D68-728C-61E2-BB8D-03AAB592409C}|Faturamento.Api\\Faturamento.Api.csproj|f:\\korperp\\back-end\\korperp\\faturamento.api\\faturamento.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F5471D68-728C-61E2-BB8D-03AAB592409C}|Faturamento.Api\\Faturamento.Api.csproj|solutionrelative:faturamento.api\\faturamento.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gmede\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-396505952\\Dockerfile.docker||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2D6954C-6F03-48A2-253C-3B02E698C38E}|Faturamento.Infra.Data\\Faturamento.Infra.Data.csproj|f:\\korperp\\back-end\\korperp\\faturamento.infra.data\\messaging\\rabbitmqpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2D6954C-6F03-48A2-253C-3B02E698C38E}|Faturamento.Infra.Data\\Faturamento.Infra.Data.csproj|solutionrelative:faturamento.infra.data\\messaging\\rabbitmqpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B4951C8-B34A-1A70-FB56-D2AA8CB13FDB}|KorpERP\\Estoque.Api.csproj|f:\\korperp\\back-end\\korperp\\korperp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B4951C8-B34A-1A70-FB56-D2AA8CB13FDB}|KorpERP\\Estoque.Api.csproj|solutionrelative:korperp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5471D68-728C-61E2-BB8D-03AAB592409C}|Faturamento.Api\\Faturamento.Api.csproj|f:\\korperp\\back-end\\korperp\\faturamento.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5471D68-728C-61E2-BB8D-03AAB592409C}|Faturamento.Api\\Faturamento.Api.csproj|solutionrelative:faturamento.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +53,152 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\KorpERP\\appsettings.json",
+              "RelativeDocumentMoniker": "KorpERP\\appsettings.json",
+              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\KorpERP\\appsettings.json",
+              "RelativeToolTip": "KorpERP\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-13T16:48:29.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Faturamento.Api\\Program.cs",
+              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Api\\Program.cs",
+              "RelativeToolTip": "Faturamento.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T15:20:07.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\KorpERP\\Program.cs",
+              "RelativeDocumentMoniker": "KorpERP\\Program.cs",
+              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\KorpERP\\Program.cs",
+              "RelativeToolTip": "KorpERP\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T15:20:06.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NotaImpressaConsumer .cs",
+              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\KorpERP\\Consumers\\NotaImpressaConsumer .cs",
+              "RelativeDocumentMoniker": "KorpERP\\Consumers\\NotaImpressaConsumer .cs",
+              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\KorpERP\\Consumers\\NotaImpressaConsumer .cs",
+              "RelativeToolTip": "KorpERP\\Consumers\\NotaImpressaConsumer .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T14:45:59.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Infra.IoC\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "Faturamento.Infra.IoC\\DependencyInjection.cs",
+              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Infra.IoC\\DependencyInjection.cs",
+              "RelativeToolTip": "Faturamento.Infra.IoC\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T14:45:58.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RabbitMqPublisher.cs",
+              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Infra.Data\\Messaging\\RabbitMqPublisher.cs",
+              "RelativeDocumentMoniker": "Faturamento.Infra.Data\\Messaging\\RabbitMqPublisher.cs",
+              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Infra.Data\\Messaging\\RabbitMqPublisher.cs",
+              "RelativeToolTip": "Faturamento.Infra.Data\\Messaging\\RabbitMqPublisher.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAEBUwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T14:45:58.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2026-04-13T14:43:44.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Dockerfile.docker",
+              "DocumentMoniker": "C:\\Users\\gmede\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-396505952\\Dockerfile.docker",
+              "ToolTip": "C:\\Users\\gmede\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-396505952\\Dockerfile.docker",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-13T14:43:07.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Api\\Dockerfile\\Dockerfile",
+              "RelativeDocumentMoniker": "Faturamento.Api\\Dockerfile\\Dockerfile",
+              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Api\\Dockerfile\\Dockerfile",
+              "RelativeToolTip": "Faturamento.Api\\Dockerfile\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-13T14:41:02.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Faturamento.Api",
+              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Api\\Faturamento.Api.csproj",
+              "RelativeDocumentMoniker": "Faturamento.Api\\Faturamento.Api.csproj",
+              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Api\\Faturamento.Api.csproj",
+              "RelativeToolTip": "Faturamento.Api\\Faturamento.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-13T14:40:40.023Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\KorpERP\\Dockerfile\\Dockerfile",
+              "RelativeDocumentMoniker": "KorpERP\\Dockerfile\\Dockerfile",
+              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\KorpERP\\Dockerfile\\Dockerfile",
+              "RelativeToolTip": "KorpERP\\Dockerfile\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-13T14:38:07.758Z",
+              "EditorCaption": ""
             }
           ]
         }
