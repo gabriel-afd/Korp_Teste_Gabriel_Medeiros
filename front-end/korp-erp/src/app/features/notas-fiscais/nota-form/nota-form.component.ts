@@ -35,10 +35,11 @@ export class NotaFormComponent implements OnInit{
 
   produtos = signal<Produto[]>([]);
 
-  itens = signal<{ codigoProduto: string; quantidade: number }[]>([]);
+  itens = signal<{ codigoProduto: string; descricao: string; quantidade: number }[]>([]);
 
   itemForm = this.fb.group({
     codigoProduto: ['', Validators.required],
+    descricao: ['', Validators.required],
     quantidade: [1, [Validators.required, Validators.min(1)]]
   });
 
@@ -51,17 +52,17 @@ export class NotaFormComponent implements OnInit{
   adicionarItem() {
     if (this.itemForm.invalid) return;
 
-    const { codigoProduto, quantidade } = this.itemForm.value;
+    const { codigoProduto, descricao, quantidade } = this.itemForm.value;
 
     const jaExiste = this.itens().some(i => i.codigoProduto === codigoProduto);
     if (jaExiste) return;
 
     this.itens.update(lista => [
       ...lista,
-      { codigoProduto: codigoProduto!, quantidade: quantidade! }
+      { codigoProduto: codigoProduto!, descricao: descricao!, quantidade: quantidade! }
     ]);
 
-    this.itemForm.reset({ codigoProduto: '', quantidade: 1 });
+    this.itemForm.reset({ codigoProduto: '', descricao: '', quantidade: 1 });
   }
 
   removerItem(codigo: string) {
@@ -72,10 +73,16 @@ export class NotaFormComponent implements OnInit{
     return this.produtos().find(p => p.codigo === codigo)?.descricao ?? codigo;
   }
 
+  onProdutoChange(codigo: string) {
+    this.itemForm.patchValue({ descricao: this.descricaoProduto(codigo) });
+  }
+
   salvar() {
     if (this.itens().length === 0) return;
 
-    this.notaService.criar({ itens: this.itens() }).subscribe({
+    this.notaService.criar({
+      itens: this.itens().map(({ codigoProduto, descricao, quantidade }) => ({ codigoProduto, descricao, quantidade }))
+    }).subscribe({
       next: () => this.dialogRef.close(true),
       error: () => {}
     });

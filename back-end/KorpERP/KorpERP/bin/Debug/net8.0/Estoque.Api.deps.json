@@ -10,6 +10,7 @@
         "dependencies": {
           "Estoque.Infra.IoC": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "8.0.0",
+          "RabbitMQ.Client": "7.2.1",
           "Swashbuckle.AspNetCore": "6.6.2"
         },
         "runtime": {
@@ -521,6 +522,14 @@
           }
         }
       },
+      "RabbitMQ.Client/7.2.1": {
+        "runtime": {
+          "lib/net8.0/RabbitMQ.Client.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.2.1.0"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/6.6.2": {
         "dependencies": {
           "Swashbuckle.AspNetCore.Swagger": "6.6.2",
@@ -996,6 +1005,13 @@
       "sha512": "sha512-KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
+    },
+    "RabbitMQ.Client/7.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YKXEfg9fVQiTKgZlvIhAfPSFaamEgi8DsQmisCH0IAsU4FYLrtoguDrDj6JtJVGUt40QPnBLRH6fTQcAC4qsOg==",
+      "path": "rabbitmq.client/7.2.1",
+      "hashPath": "rabbitmq.client.7.2.1.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.6.2": {
       "type": "package",

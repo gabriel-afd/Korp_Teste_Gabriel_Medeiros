@@ -13,3 +13,4 @@ F:\KorpERP\back-end\KorpERP\Estoque.Application\obj\Debug\net8.0\Estoque.Applica
 F:\KorpERP\back-end\KorpERP\Estoque.Application\obj\Debug\net8.0\refint\Estoque.Application.dll
 F:\KorpERP\back-end\KorpERP\Estoque.Application\obj\Debug\net8.0\Estoque.Application.pdb
 F:\KorpERP\back-end\KorpERP\Estoque.Application\obj\Debug\net8.0\ref\Estoque.Application.dll
+F:\KorpERP\back-end\KorpERP\Estoque.Application\obj\Debug\net8.0\Estoque.Application.sourcelink.json

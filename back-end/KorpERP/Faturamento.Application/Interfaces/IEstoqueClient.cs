@@ -1,7 +1,6 @@
-﻿namespace Faturamento.Application.Interfaces
+namespace Faturamento.Application.Interfaces;
+
+public interface IEstoqueClient
 {
-    public interface IEstoqueClient
-    {
-        Task DebitarAsync(string codigo, int quantidade);
-    }
+    Task ValidarProdutoAsync(string codigo, int quantidade);
 }

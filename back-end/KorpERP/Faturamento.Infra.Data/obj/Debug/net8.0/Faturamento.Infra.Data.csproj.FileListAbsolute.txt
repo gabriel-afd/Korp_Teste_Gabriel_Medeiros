@@ -17,3 +17,8 @@ F:\KorpERP\back-end\KorpERP\Faturamento.Infra.Data\bin\Debug\net8.0\Faturamento.
 F:\KorpERP\back-end\KorpERP\Faturamento.Infra.Data\bin\Debug\net8.0\Faturamento.Application.dll
 F:\KorpERP\back-end\KorpERP\Faturamento.Infra.Data\bin\Debug\net8.0\Faturamento.Application.pdb
 F:\KorpERP\back-end\KorpERP\Faturamento.Infra.Data\obj\Debug\net8.0\Faturamento.Infra.Data.genruntimeconfig.cache
+F:\KorpERP\back-end\KorpERP\Faturamento.Infra.Data\obj\Debug\net8.0\Faturamento.Infra.Data.sourcelink.json
+F:\KorpERP\back-end\KorpERP\Faturamento.Infra.Data\bin\Debug\net8.0\Estoque.Application.dll
+F:\KorpERP\back-end\KorpERP\Faturamento.Infra.Data\bin\Debug\net8.0\Estoque.Domain.dll
+F:\KorpERP\back-end\KorpERP\Faturamento.Infra.Data\bin\Debug\net8.0\Estoque.Application.pdb
+F:\KorpERP\back-end\KorpERP\Faturamento.Infra.Data\bin\Debug\net8.0\Estoque.Domain.pdb

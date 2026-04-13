@@ -1,14 +1,16 @@
 import { Injectable, signal, inject } from '@angular/core';
 import { PagedResult } from '../models/paged-result.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { catchError, delay, finalize, tap, throwError } from 'rxjs';
+import { catchError, delay, finalize, map, tap, throwError } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { NotaFiscal, CriarNotaFiscalDto } from '../models/nota-fiscal.model';
+import { Produto } from '../models/produto.model';
 
 @Injectable({ providedIn: 'root' })
 export class NotaFiscalService {
   private http = inject(HttpClient);
-  private baseUrl = `${environment.faturamentoApi}/notasfiscais`;
+  private baseUrlFaturamento = `${environment.faturamentoApi}/notasfiscais`;
+  private baseUrlEstoque = `${environment.estoqueApi}/produtos`;
 
   notas = signal<NotaFiscal[]>([]);
   total = signal(0);
@@ -22,7 +24,7 @@ export class NotaFiscalService {
       .set('pagina', pagina)
       .set('tamanhoPagina', tamanhoPagina);
 
-    return this.http.get<PagedResult<NotaFiscal>>(this.baseUrl, { params }).pipe(
+    return this.http.get<PagedResult<NotaFiscal>>(this.baseUrlFaturamento, { params }).pipe(
       tap(result => {
         this.notas.set(result.items);
         this.total.set(result.total);
@@ -33,14 +35,14 @@ export class NotaFiscalService {
   }
 
   criar(dto: CriarNotaFiscalDto) {
-    return this.http.post<NotaFiscal>(this.baseUrl, dto).pipe(
+    return this.http.post<NotaFiscal>(this.baseUrlFaturamento, dto).pipe(
       tap(nova => this.notas.update(lista => [...lista, nova]))
     );
   }
 
   imprimir(id: string) {
     this.imprimindo.set(id);
-    return this.http.post(`${this.baseUrl}/${id}/imprimir`, {}).pipe(
+    return this.http.post(`${this.baseUrlFaturamento}/${id}/imprimir`, {}).pipe(
       delay(600),
       tap(() => {
         this.notas.update(lista =>

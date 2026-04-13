@@ -38,6 +38,22 @@
   },
   {
     "ContainingType": "Estoque.API.Controllers.ProdutosController",
+    "Method": "GetByCodigo",
+    "RelativePath": "api/produtos/{codigo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Estoque.API.Controllers.ProdutosController",
     "Method": "Debitar",
     "RelativePath": "api/produtos/{codigo}/debitar",
     "HttpMethod": "PATCH",

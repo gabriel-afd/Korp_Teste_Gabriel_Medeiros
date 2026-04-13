@@ -4,13 +4,18 @@
   <form [formGroup]="itemForm" class="add-item-form">
     <mat-form-field appearance="outline" class="field-produto">
       <mat-label>Produto</mat-label>
-      <mat-select formControlName="codigoProduto">
+      <mat-select formControlName="codigoProduto" (selectionChange)="onProdutoChange($event.value)">
         @for (p of produtos(); track p.codigo) {
           <mat-option [value]="p.codigo">
             {{ p.descricao }} (saldo: {{ p.saldo }})
           </mat-option>
         }
       </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="field-produto">
+      <mat-label>Descricao</mat-label>
+      <input matInput formControlName="descricao" />
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="field-qtd">
@@ -27,7 +32,7 @@
     <table mat-table [dataSource]="itens()">
       <ng-container matColumnDef="produto">
         <th mat-header-cell *matHeaderCellDef>Produto</th>
-        <td mat-cell *matCellDef="let i">{{ descricaoProduto(i.codigoProduto) }}</td>
+        <td mat-cell *matCellDef="let i">{{ i.descricao }}</td>
       </ng-container>
 
       <ng-container matColumnDef="qtd">

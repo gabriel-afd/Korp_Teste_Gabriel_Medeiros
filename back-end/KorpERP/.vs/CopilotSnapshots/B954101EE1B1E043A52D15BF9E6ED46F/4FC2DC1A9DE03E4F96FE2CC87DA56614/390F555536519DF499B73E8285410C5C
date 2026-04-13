@@ -1,0 +1,128 @@
+﻿using Estoque.Domain.Common;
+using Faturamento.Application.DTOs.Create;
+using Faturamento.Application.DTOs.Response;
+using Faturamento.Application.Interfaces;
+using Faturamento.Application.Messaging;
+using Faturamento.Domain.Entities;
+using Faturamento.Domain.Enums;
+using Faturamento.Domain.Exceptions;
+
+namespace Faturamento.Application.Services
+{
+    public class NotaFiscalService
+    {
+        private readonly IEstoqueClient _estoqueClient;
+        private readonly INotaFiscalRepository _repository;
+        private readonly IEventPublisher _eventPublisher;
+
+        public NotaFiscalService(IEstoqueClient estoqueClient, INotaFiscalRepository repository, IEventPublisher eventPublisher)
+        {
+            _estoqueClient = estoqueClient;
+            _repository = repository;
+            _eventPublisher = eventPublisher;
+        }
+
+        public async Task<PagedResult<NotaFiscalResponseDto>> GetPagedAsync(int pagina = 1, int tamanhoPagina = 10)
+        {
+            var result = await _repository.GetPagedAsync(pagina, tamanhoPagina);
+
+            return new PagedResult<NotaFiscalResponseDto>
+            {
+                Items = result.Items.Select(n => new NotaFiscalResponseDto
+                {
+                    Id = n.Id,
+                    Numero = n.Numero,
+                    Status = n.Status.ToString(),
+                    Data = n.Data,
+                    Itens = n.Itens.Select(i => new ItemNotaResponseDto
+                    {
+                        CodigoProduto = i.CodigoProduto,
+                        Quantidade = i.Quantidade
+                    }).ToList()
+                }).ToList(),
+                Total = result.Total,
+                Pagina = result.Pagina,
+                TamanhoPagina = result.TamanhoPagina
+            };
+        }
+
+        public async Task<NotaFiscalResponseDto?> GetByIdAsync(Guid id)
+        {
+            var nota = await _repository.GetByIdAsync(id);
+
+            if (nota == null)
+                throw new NotaFiscalNaoEncontradaException();
+
+            return new NotaFiscalResponseDto
+            {
+                Id = nota.Id,
+                Numero = nota.Numero,
+                Status = nota.Status.ToString(),
+                Data = nota.Data,
+                Itens = nota.Itens.Select(i => new ItemNotaResponseDto
+                {
+                    CodigoProduto = i.CodigoProduto,
+                    Quantidade = i.Quantidade
+                }).ToList()
+            };
+        }
+
+        public async Task<NotaFiscalResponseDto> CriarAsync(NotaFiscalCreateDto dto)
+        {
+            var numero = await _repository.ProximoNumeroAsync();
+
+            var nota = new NotaFiscal(numero);
+
+            foreach (var item in dto.Itens)
+            {
+                nota.AdicionarItem(item.CodigoProduto, item.Quantidade);
+            }
+
+            await _repository.AddAsync(nota);
+
+            foreach (var item in nota.Itens)
+            {
+                await _estoqueClient.DebitarAsync(item.CodigoProduto, item.Quantidade);
+            }
+
+            return new NotaFiscalResponseDto
+            {
+                Id = nota.Id,
+                Numero = nota.Numero,
+                Status = nota.Status.ToString(),
+                Data = nota.Data,
+                Itens = nota.Itens.Select(i => new ItemNotaResponseDto
+                {
+                    CodigoProduto = i.CodigoProduto,
+                    Quantidade = i.Quantidade
+                }).ToList()
+            };
+        }
+
+        public async Task ImprimirAsync(Guid id)
+        {
+            var nota = await _repository.GetByIdAsync(id);
+
+            if (nota == null)
+                throw new NotaFiscalNaoEncontradaException();
+
+            if (nota.Status == StatusNota.Fechada)
+                throw new NotaFiscalJaFechadaException();
+
+            nota.Fechar();
+            await _repository.UpdateAsync(nota);
+
+            var evento = new NotaImpressaEvent
+            {
+                NotaId = nota.Id,
+                Itens = nota.Itens.Select(i => new ItemNotaEvent
+                {
+                    CodigoProduto = i.CodigoProduto,
+                    Quantidade = i.Quantidade
+                }).ToList()
+            };
+
+            await _eventPublisher.PublishAsync(evento, "nota-impressa");
+        }
+    }
+}

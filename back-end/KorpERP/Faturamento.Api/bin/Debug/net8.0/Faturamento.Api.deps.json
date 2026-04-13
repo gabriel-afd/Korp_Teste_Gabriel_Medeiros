@@ -552,6 +552,14 @@
           }
         }
       },
+      "RabbitMQ.Client/7.2.1": {
+        "runtime": {
+          "lib/net8.0/RabbitMQ.Client.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.2.1.0"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/6.6.2": {
         "dependencies": {
           "Swashbuckle.AspNetCore.Swagger": "6.6.2",
@@ -779,6 +787,25 @@
           }
         }
       },
+      "Estoque.Application/1.0.0": {
+        "dependencies": {
+          "Estoque.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Estoque.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Estoque.Domain/1.0.0": {
+        "runtime": {
+          "Estoque.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Faturamento.Application/1.0.0": {
         "dependencies": {
           "Faturamento.Domain": "1.0.0"
@@ -800,11 +827,13 @@
       },
       "Faturamento.Infra.Data/1.0.0": {
         "dependencies": {
+          "Estoque.Application": "1.0.0",
           "Faturamento.Application": "1.0.0",
           "Faturamento.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
-          "Microsoft.Extensions.Http.Polly": "8.0.0"
+          "Microsoft.Extensions.Http.Polly": "8.0.0",
+          "RabbitMQ.Client": "7.2.1"
         },
         "runtime": {
           "Faturamento.Infra.Data.dll": {
@@ -816,7 +845,8 @@
       "Faturamento.Infra.IoC/1.0.0": {
         "dependencies": {
           "Faturamento.Application": "1.0.0",
-          "Faturamento.Infra.Data": "1.0.0"
+          "Faturamento.Infra.Data": "1.0.0",
+          "Microsoft.Extensions.Http.Polly": "8.0.0"
         },
         "runtime": {
           "Faturamento.Infra.IoC.dll": {
@@ -1050,6 +1080,13 @@
       "path": "polly.extensions.http/3.0.0",
       "hashPath": "polly.extensions.http.3.0.0.nupkg.sha512"
     },
+    "RabbitMQ.Client/7.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YKXEfg9fVQiTKgZlvIhAfPSFaamEgi8DsQmisCH0IAsU4FYLrtoguDrDj6JtJVGUt40QPnBLRH6fTQcAC4qsOg==",
+      "path": "rabbitmq.client/7.2.1",
+      "hashPath": "rabbitmq.client.7.2.1.nupkg.sha512"
+    },
     "Swashbuckle.AspNetCore/6.6.2": {
       "type": "package",
       "serviceable": true,
@@ -1182,6 +1219,16 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "Estoque.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Estoque.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Faturamento.Application/1.0.0": {
       "type": "project",

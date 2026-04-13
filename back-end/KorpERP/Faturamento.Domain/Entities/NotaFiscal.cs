@@ -27,7 +27,7 @@ public class NotaFiscal
         Status = StatusNota.Fechada;
     }
 
-    public void AdicionarItem(string codigoProduto, int quantidade)
+    public void AdicionarItem(string codigoProduto,string descricao,int quantidade)
     {
         if (Status == StatusNota.Fechada)
             throw new Exception("Não é possível alterar nota fechada");
@@ -35,6 +35,6 @@ public class NotaFiscal
         if (quantidade <= 0)
             throw new Exception("Quantidade inválida");
 
-        Itens.Add(new ItemNota(codigoProduto, quantidade));
+        Itens.Add(new ItemNota(codigoProduto, descricao, quantidade));
     }
 }

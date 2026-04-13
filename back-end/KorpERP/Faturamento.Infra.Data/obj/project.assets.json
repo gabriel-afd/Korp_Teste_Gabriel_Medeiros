@@ -1051,6 +1051,23 @@
           }
         }
       },
+      "RabbitMQ.Client/7.2.1": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Pipelines": "8.0.0",
+          "System.Threading.RateLimiting": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.CodeDom/4.4.0": {
         "type": "package",
         "compile": {
@@ -1280,20 +1297,20 @@
           }
         }
       },
-      "System.IO.Pipelines/6.0.3": {
+      "System.IO.Pipelines/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/System.IO.Pipelines.dll": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "System.Memory/4.5.4": {
@@ -1607,6 +1624,22 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "System.Threading.RateLimiting/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Threading.RateLimiting.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Threading.RateLimiting.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
       "System.Threading.Tasks.Extensions/4.5.4": {
         "type": "package",
         "compile": {
@@ -1636,6 +1669,29 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "Estoque.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Estoque.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Estoque.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Estoque.Application.dll": {}
+        }
+      },
+      "Estoque.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Estoque.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Estoque.Domain.dll": {}
         }
       },
       "Faturamento.Application/1.0.0": {
@@ -3282,6 +3338,23 @@
         "polly.extensions.http.nuspec"
       ]
     },
+    "RabbitMQ.Client/7.2.1": {
+      "sha512": "YKXEfg9fVQiTKgZlvIhAfPSFaamEgi8DsQmisCH0IAsU4FYLrtoguDrDj6JtJVGUt40QPnBLRH6fTQcAC4qsOg==",
+      "type": "package",
+      "path": "rabbitmq.client/7.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net8.0/RabbitMQ.Client.dll",
+        "lib/net8.0/RabbitMQ.Client.xml",
+        "lib/netstandard2.0/RabbitMQ.Client.dll",
+        "lib/netstandard2.0/RabbitMQ.Client.xml",
+        "rabbitmq.client.7.2.1.nupkg.sha512",
+        "rabbitmq.client.nuspec"
+      ]
+    },
     "System.CodeDom/4.4.0": {
       "sha512": "2sCCb7doXEwtYAbqzbF/8UAeDRMNmPaQbU2q50Psg1J9KzumyVVCgKQY8s53WIPTufNT0DpSe9QRvVjOzfDWBA==",
       "type": "package",
@@ -3592,27 +3665,31 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
-    "System.IO.Pipelines/6.0.3": {
-      "sha512": "ryTgF+iFkpGZY1vRQhfCzX0xTdlV3pyaTTqRu2ETbEv+HlV7O6y7hyQURnghNIXvctl5DuZ//Dpks6HdL/Txgw==",
+    "System.IO.Pipelines/8.0.0": {
+      "sha512": "FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA==",
       "type": "package",
-      "path": "system.io.pipelines/6.0.3",
+      "path": "system.io.pipelines/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.IO.Pipelines.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
         "buildTransitive/netcoreapp2.0/System.IO.Pipelines.targets",
-        "buildTransitive/netcoreapp3.1/_._",
-        "lib/net461/System.IO.Pipelines.dll",
-        "lib/net461/System.IO.Pipelines.xml",
+        "lib/net462/System.IO.Pipelines.dll",
+        "lib/net462/System.IO.Pipelines.xml",
         "lib/net6.0/System.IO.Pipelines.dll",
         "lib/net6.0/System.IO.Pipelines.xml",
-        "lib/netcoreapp3.1/System.IO.Pipelines.dll",
-        "lib/netcoreapp3.1/System.IO.Pipelines.xml",
+        "lib/net7.0/System.IO.Pipelines.dll",
+        "lib/net7.0/System.IO.Pipelines.xml",
+        "lib/net8.0/System.IO.Pipelines.dll",
+        "lib/net8.0/System.IO.Pipelines.xml",
         "lib/netstandard2.0/System.IO.Pipelines.dll",
         "lib/netstandard2.0/System.IO.Pipelines.xml",
-        "system.io.pipelines.6.0.3.nupkg.sha512",
+        "system.io.pipelines.8.0.0.nupkg.sha512",
         "system.io.pipelines.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -4353,6 +4430,35 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Threading.RateLimiting/8.0.0": {
+      "sha512": "7mu9v0QDv66ar3DpGSZHg9NuNcxDaaAcnMULuZlaTpP9+hwXhrxNGsF5GmLkSHxFdb5bBc1TzeujsRgTrPWi+Q==",
+      "type": "package",
+      "path": "system.threading.ratelimiting/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Threading.RateLimiting.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Threading.RateLimiting.targets",
+        "lib/net462/System.Threading.RateLimiting.dll",
+        "lib/net462/System.Threading.RateLimiting.xml",
+        "lib/net6.0/System.Threading.RateLimiting.dll",
+        "lib/net6.0/System.Threading.RateLimiting.xml",
+        "lib/net7.0/System.Threading.RateLimiting.dll",
+        "lib/net7.0/System.Threading.RateLimiting.xml",
+        "lib/net8.0/System.Threading.RateLimiting.dll",
+        "lib/net8.0/System.Threading.RateLimiting.xml",
+        "lib/netstandard2.0/System.Threading.RateLimiting.dll",
+        "lib/netstandard2.0/System.Threading.RateLimiting.xml",
+        "system.threading.ratelimiting.8.0.0.nupkg.sha512",
+        "system.threading.ratelimiting.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Threading.Tasks.Extensions/4.5.4": {
       "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
       "type": "package",
@@ -4413,6 +4519,16 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Estoque.Application/1.0.0": {
+      "type": "project",
+      "path": "../Estoque.Application/Estoque.Application.csproj",
+      "msbuildProject": "../Estoque.Application/Estoque.Application.csproj"
+    },
+    "Estoque.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Estoque.Domain/Estoque.Domain.csproj",
+      "msbuildProject": "../Estoque.Domain/Estoque.Domain.csproj"
+    },
     "Faturamento.Application/1.0.0": {
       "type": "project",
       "path": "../Faturamento.Application/Faturamento.Application.csproj",
@@ -4426,12 +4542,14 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Estoque.Application >= 1.0.0",
       "Faturamento.Application >= 1.0.0",
       "Faturamento.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0",
-      "Microsoft.Extensions.Http.Polly >= 8.0.0"
+      "Microsoft.Extensions.Http.Polly >= 8.0.0",
+      "RabbitMQ.Client >= 7.2.1"
     ]
   },
   "packageFolders": {
@@ -4466,6 +4584,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "F:\\KorpERP\\back-end\\KorpERP\\Estoque.Application\\Estoque.Application.csproj": {
+              "projectPath": "F:\\KorpERP\\back-end\\KorpERP\\Estoque.Application\\Estoque.Application.csproj"
+            },
             "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Application\\Faturamento.Application.csproj": {
               "projectPath": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Application\\Faturamento.Application.csproj"
             },
@@ -4508,6 +4629,10 @@
           "Microsoft.Extensions.Http.Polly": {
             "target": "Package",
             "version": "[8.0.0, )"
+          },
+          "RabbitMQ.Client": {
+            "target": "Package",
+            "version": "[7.2.1, )"
           }
         },
         "imports": [

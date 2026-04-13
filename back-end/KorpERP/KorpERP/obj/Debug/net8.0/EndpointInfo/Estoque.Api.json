@@ -66,6 +66,28 @@
         }
       }
     },
+    "/api/produtos/{codigo}": {
+      "get": {
+        "tags": [
+          "Produtos"
+        ],
+        "parameters": [
+          {
+            "name": "codigo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/produtos/{codigo}/debitar": {
       "patch": {
         "tags": [

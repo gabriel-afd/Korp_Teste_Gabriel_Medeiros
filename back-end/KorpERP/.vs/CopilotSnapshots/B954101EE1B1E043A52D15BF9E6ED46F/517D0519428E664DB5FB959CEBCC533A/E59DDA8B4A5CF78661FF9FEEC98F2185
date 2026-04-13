@@ -1,0 +1,93 @@
+﻿using System.Text;
+using System.Text.Json;
+using Estoque.Application.Services;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
+
+namespace Estoque.Api.Consumers;
+
+public class NotaImpressaConsumer : BackgroundService
+{
+    private readonly IServiceScopeFactory _scopeFactory;
+    private readonly ILogger<NotaImpressaConsumer> _logger;
+    private IConnection? _connection;
+    private IChannel? _channel;
+
+    public NotaImpressaConsumer(IServiceScopeFactory scopeFactory, ILogger<NotaImpressaConsumer> logger)
+    {
+        _scopeFactory = scopeFactory;
+        _logger = logger;
+    }
+
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    {
+        try
+        {
+            var factory = new ConnectionFactory { HostName = "localhost" };
+            _connection = await factory.CreateConnectionAsync(stoppingToken);
+            _channel = await _connection.CreateChannelAsync(cancellationToken: stoppingToken);
+
+            await _channel.QueueDeclareAsync(
+                queue: "nota-impressa",
+                durable: true,
+                exclusive: false,
+                autoDelete: false,
+                cancellationToken: stoppingToken
+            );
+
+            await _channel.BasicQosAsync(prefetchSize: 0, prefetchCount: 1, global: false, cancellationToken: stoppingToken);
+
+            var consumer = new AsyncEventingBasicConsumer(_channel);
+
+            consumer.ReceivedAsync += async (sender, args) =>
+            {
+                try
+                {
+                    var json = Encoding.UTF8.GetString(args.Body.ToArray());
+                    _logger.LogInformation("Mensagem recebida: {Json}", json);
+
+                    var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                    var evento = JsonSerializer.Deserialize<NotaImpressaEvent>(json, options);
+
+                    if (evento != null && evento.Itens.Count > 0)
+                    {
+                        using var scope = _scopeFactory.CreateScope();
+                        var produtoService = scope.ServiceProvider.GetRequiredService<ProdutoService>();
+
+                        foreach (var item in evento.Itens)
+                        {
+                            _logger.LogInformation("Debitando {Codigo} quantidade {Qtd}", item.CodigoProduto, item.Quantidade);
+                            await produtoService.DebitarAsync(item.CodigoProduto, item.Quantidade);
+                        }
+                    }
+                    else
+                    {
+                        _logger.LogWarning("Evento nulo ou sem itens. JSON: {Json}", json);
+                    }
+
+                    await _channel.BasicAckAsync(args.DeliveryTag, multiple: false);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Erro ao processar mensagem da fila nota-impressa");
+                    await _channel.BasicAckAsync(args.DeliveryTag, multiple: false);
+                }
+            };
+
+            await _channel.BasicConsumeAsync(queue: "nota-impressa", autoAck: false, consumer: consumer, cancellationToken: stoppingToken);
+
+            _logger.LogInformation("Consumer nota-impressa iniciado com sucesso");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Falha ao conectar no RabbitMQ");
+        }
+    }
+
+    public override async Task StopAsync(CancellationToken cancellationToken)
+    {
+        if (_channel != null) await _channel.CloseAsync(cancellationToken);
+        if (_connection != null) await _connection.CloseAsync(cancellationToken);
+        await base.StopAsync(cancellationToken);
+    }
+}

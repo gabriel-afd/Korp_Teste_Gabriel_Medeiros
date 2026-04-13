@@ -23,6 +23,13 @@ public class ProdutosController : ControllerBase
         return Ok(result);
     }
 
+    [HttpGet("{codigo}")]
+    public async Task<IActionResult> GetByCodigo(string codigo)
+    {
+        var produto = await _service.GetByCodigoAsync(codigo);
+        return Ok(produto);
+    }
+
     [HttpPost]
     public async Task<IActionResult> Criar(ProdutoCreateDto dto)
     {

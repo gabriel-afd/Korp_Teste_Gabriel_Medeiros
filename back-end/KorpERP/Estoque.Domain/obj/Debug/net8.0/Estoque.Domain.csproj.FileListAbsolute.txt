@@ -9,3 +9,4 @@ F:\KorpERP\back-end\KorpERP\Estoque.Domain\obj\Debug\net8.0\Estoque.Domain.dll
 F:\KorpERP\back-end\KorpERP\Estoque.Domain\obj\Debug\net8.0\refint\Estoque.Domain.dll
 F:\KorpERP\back-end\KorpERP\Estoque.Domain\obj\Debug\net8.0\Estoque.Domain.pdb
 F:\KorpERP\back-end\KorpERP\Estoque.Domain\obj\Debug\net8.0\ref\Estoque.Domain.dll
+F:\KorpERP\back-end\KorpERP\Estoque.Domain\obj\Debug\net8.0\Estoque.Domain.sourcelink.json

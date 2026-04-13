@@ -10,7 +10,8 @@
         "dependencies": {
           "Faturamento.Application": "1.0.0",
           "Faturamento.Infra.Data": "1.0.0",
-          "Microsoft.Extensions.Http": "8.0.0"
+          "Microsoft.Extensions.Http": "8.0.0",
+          "Microsoft.Extensions.Http.Polly": "8.0.0"
         },
         "runtime": {
           "Faturamento.Infra.IoC.dll": {}
@@ -474,6 +475,18 @@
           }
         }
       },
+      "RabbitMQ.Client/7.2.1": {
+        "dependencies": {
+          "System.IO.Pipelines": "8.0.0",
+          "System.Threading.RateLimiting": "8.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/RabbitMQ.Client.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.2.1.0"
+          }
+        }
+      },
       "System.Configuration.ConfigurationManager/6.0.1": {
         "dependencies": {
           "System.Security.Cryptography.ProtectedData": "6.0.0",
@@ -520,6 +533,14 @@
           "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {
             "assemblyVersion": "6.24.0.0",
             "fileVersion": "6.24.0.31013"
+          }
+        }
+      },
+      "System.IO.Pipelines/8.0.0": {
+        "runtime": {
+          "lib/net8.0/System.IO.Pipelines.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
           }
         }
       },
@@ -577,6 +598,14 @@
           }
         }
       },
+      "System.Threading.RateLimiting/8.0.0": {
+        "runtime": {
+          "lib/net8.0/System.Threading.RateLimiting.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
       "System.Windows.Extensions/6.0.0": {
         "dependencies": {
           "System.Drawing.Common": "6.0.0"
@@ -593,6 +622,25 @@
             "assetType": "runtime",
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "Estoque.Application/1.0.0": {
+        "dependencies": {
+          "Estoque.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Estoque.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Estoque.Domain/1.0.0": {
+        "runtime": {
+          "Estoque.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -617,11 +665,13 @@
       },
       "Faturamento.Infra.Data/1.0.0": {
         "dependencies": {
+          "Estoque.Application": "1.0.0",
           "Faturamento.Application": "1.0.0",
           "Faturamento.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
-          "Microsoft.Extensions.Http.Polly": "8.0.0"
+          "Microsoft.Extensions.Http.Polly": "8.0.0",
+          "RabbitMQ.Client": "7.2.1"
         },
         "runtime": {
           "Faturamento.Infra.Data.dll": {
@@ -897,6 +947,13 @@
       "path": "polly.extensions.http/3.0.0",
       "hashPath": "polly.extensions.http.3.0.0.nupkg.sha512"
     },
+    "RabbitMQ.Client/7.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YKXEfg9fVQiTKgZlvIhAfPSFaamEgi8DsQmisCH0IAsU4FYLrtoguDrDj6JtJVGUt40QPnBLRH6fTQcAC4qsOg==",
+      "path": "rabbitmq.client/7.2.1",
+      "hashPath": "rabbitmq.client.7.2.1.nupkg.sha512"
+    },
     "System.Configuration.ConfigurationManager/6.0.1": {
       "type": "package",
       "serviceable": true,
@@ -917,6 +974,13 @@
       "sha512": "sha512-Qibsj9MPWq8S/C0FgvmsLfIlHLE7ay0MJIaAmK94ivN3VyDdglqReed5qMvdQhSL0BzK6v0Z1wB/sD88zVu6Jw==",
       "path": "system.identitymodel.tokens.jwt/6.24.0",
       "hashPath": "system.identitymodel.tokens.jwt.6.24.0.nupkg.sha512"
+    },
+    "System.IO.Pipelines/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA==",
+      "path": "system.io.pipelines/8.0.0",
+      "hashPath": "system.io.pipelines.8.0.0.nupkg.sha512"
     },
     "System.Memory.Data/1.0.2": {
       "type": "package",
@@ -946,12 +1010,29 @@
       "path": "system.security.permissions/6.0.0",
       "hashPath": "system.security.permissions.6.0.0.nupkg.sha512"
     },
+    "System.Threading.RateLimiting/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7mu9v0QDv66ar3DpGSZHg9NuNcxDaaAcnMULuZlaTpP9+hwXhrxNGsF5GmLkSHxFdb5bBc1TzeujsRgTrPWi+Q==",
+      "path": "system.threading.ratelimiting/8.0.0",
+      "hashPath": "system.threading.ratelimiting.8.0.0.nupkg.sha512"
+    },
     "System.Windows.Extensions/6.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "Estoque.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Estoque.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Faturamento.Application/1.0.0": {
       "type": "project",

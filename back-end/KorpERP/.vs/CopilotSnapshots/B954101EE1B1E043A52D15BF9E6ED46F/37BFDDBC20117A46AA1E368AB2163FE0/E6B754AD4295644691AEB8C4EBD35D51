@@ -1,0 +1,8 @@
+﻿using Faturamento.Domain.Exceptions;
+
+namespace Estoque.Domain.Exceptions;
+
+public class ProdutoInvalidoException : DomainException
+{
+    public ProdutoInvalidoException(string message) : base(message) { }
+}

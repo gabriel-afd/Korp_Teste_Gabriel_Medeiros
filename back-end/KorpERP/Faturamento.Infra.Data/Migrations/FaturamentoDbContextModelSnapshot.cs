@@ -32,6 +32,10 @@ namespace Faturamento.Infra.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("DescricaoProduto")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<Guid>("NotaFiscalId")
                         .HasColumnType("uniqueidentifier");
 

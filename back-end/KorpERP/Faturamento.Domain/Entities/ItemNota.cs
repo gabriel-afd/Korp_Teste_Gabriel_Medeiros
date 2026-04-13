@@ -5,9 +5,10 @@ public class ItemNota
     public Guid Id { get; private set; }
     public Guid NotaFiscalId { get; private set; }
     public string CodigoProduto { get; private set; }
+    public string DescricaoProduto { get; private set; }
     public int Quantidade { get; private set; }
 
-    public ItemNota(string codigoProduto, int quantidade)
+    public ItemNota(string codigoProduto, string descricaoProduto, int quantidade)
     {
         if (string.IsNullOrWhiteSpace(codigoProduto))
             throw new Exception("Produto inválido");
@@ -17,6 +18,7 @@ public class ItemNota
 
         Id = Guid.NewGuid();
         CodigoProduto = codigoProduto;
+        DescricaoProduto = descricaoProduto;
         Quantidade = quantidade;
     }
 }

@@ -17,3 +17,4 @@ F:\KorpERP\back-end\KorpERP\Estoque.Infra.Data\obj\Debug\net8.0\refint\Estoque.I
 F:\KorpERP\back-end\KorpERP\Estoque.Infra.Data\obj\Debug\net8.0\Estoque.Infra.Data.pdb
 F:\KorpERP\back-end\KorpERP\Estoque.Infra.Data\obj\Debug\net8.0\Estoque.Infra.Data.genruntimeconfig.cache
 F:\KorpERP\back-end\KorpERP\Estoque.Infra.Data\obj\Debug\net8.0\ref\Estoque.Infra.Data.dll
+F:\KorpERP\back-end\KorpERP\Estoque.Infra.Data\obj\Debug\net8.0\Estoque.Infra.Data.sourcelink.json

@@ -34,7 +34,7 @@ export class NotasListComponent implements OnInit{
   isBrowser = isPlatformBrowser(this.platformId);
 
 
-  colunas = ['numero', 'data', 'status', 'acoes'];
+  colunas = ['numero', 'data', 'itens', 'status', 'acoes'];
   paginaAtual = signal(1);
   tamanhoPagina = signal(5);
 

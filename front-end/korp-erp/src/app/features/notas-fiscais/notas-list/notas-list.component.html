@@ -23,7 +23,16 @@
 
           <ng-container matColumnDef="data">
             <th mat-header-cell *matHeaderCellDef> Emissão </th>
-            <td mat-cell *matCellDef="let n"> {{ n.data | date:'dd/MM/yyyy' }} </td>
+            <td mat-cell *matCellDef="let n"> {{ n.data | date:'dd/MM/yyyy - HH:mm' }}  </td>
+          </ng-container>
+
+          <ng-container matColumnDef="itens">
+            <th mat-header-cell *matHeaderCellDef>Produtos</th>
+            <td mat-cell *matCellDef="let n">
+              @for (item of n.itens; track item.codigoProduto) {
+                <span>{{ item.descricao ?? item.descricaoProduto ?? item.codigoProduto }} ({{ item.quantidade }}un) </span>
+              }
+            </td>
           </ng-container>
 
           <ng-container matColumnDef="status">

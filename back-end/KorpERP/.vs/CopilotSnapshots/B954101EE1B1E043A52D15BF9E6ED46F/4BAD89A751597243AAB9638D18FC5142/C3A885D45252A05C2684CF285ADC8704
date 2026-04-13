@@ -1,0 +1,82 @@
+﻿using Faturamento.Domain.Common;
+using Faturamento.Application.Interfaces;
+using Faturamento.Domain.Entities;
+using Faturamento.Infra.Data.Data;
+using Microsoft.EntityFrameworkCore;
+
+namespace Faturamento.Infra.Data.Repositories
+
+{
+    public class NotaFiscalRepository : INotaFiscalRepository
+    {
+        private readonly FaturamentoDbContext _context;
+
+        public NotaFiscalRepository(FaturamentoDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task AddAsync(NotaFiscal nota)
+        {
+            await _context.NotasFiscais.AddAsync(nota);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<List<NotaFiscal>> GetAllAsync()
+        {
+            return await _context.NotasFiscais
+                .Include(n => n.Itens)
+                .ToListAsync();
+        }
+
+        public async Task<NotaFiscal?> GetByIdAsync(Guid id)
+        {
+            return await _context.NotasFiscais
+                .Include (n => n.Itens)
+                .FirstOrDefaultAsync(n => n.Id == id);
+        }
+
+        public async Task<PagedResult<NotaFiscal>> GetPagedAsync(int pagina, int tamanhoPagina)
+        {
+            var query = _context.NotasFiscais
+            .Include(n => n.Itens)
+            .AsQueryable();
+
+            var total = await query.CountAsync();
+
+            var items = await query
+                .OrderByDescending(n => n.Numero)
+                .Skip((pagina - 1) * tamanhoPagina)
+                .Take(tamanhoPagina)
+                .ToListAsync();
+
+            return new PagedResult<NotaFiscal>
+            {
+                Items = items,
+                Total = total,
+                Pagina = pagina,
+                TamanhoPagina = tamanhoPagina
+            };
+        }
+
+        public async Task<int> ProximoNumeroAsync()
+        {
+            var ultimo = await _context.NotasFiscais
+                .OrderByDescending(n => n.Numero)
+                .FirstOrDefaultAsync();
+
+            return ultimo == null ? 1 : ultimo.Numero + 1;
+        }
+
+        public async Task UpdateAsync(NotaFiscal nota)
+        {
+            _context.NotasFiscais.Update(nota);
+            await _context.SaveChangesAsync();
+        }
+
+        Task<PagedResult<NotaFiscal>> INotaFiscalRepository.GetPagedAsync(int pagina, int tamanhoPagina)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

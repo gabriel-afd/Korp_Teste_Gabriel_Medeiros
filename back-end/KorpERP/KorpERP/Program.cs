@@ -1,3 +1,4 @@
+using Estoque.Api.Consumers;
 using Estoque.Infra.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,8 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod();
     });
 });
+
+builder.Services.AddHostedService<NotaImpressaConsumer>();
 
 var app = builder.Build();
 

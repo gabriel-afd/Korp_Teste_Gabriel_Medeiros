@@ -13,3 +13,4 @@ F:\KorpERP\back-end\KorpERP\Faturamento.Application\obj\Debug\net8.0\Faturamento
 F:\KorpERP\back-end\KorpERP\Faturamento.Application\obj\Debug\net8.0\refint\Faturamento.Application.dll
 F:\KorpERP\back-end\KorpERP\Faturamento.Application\obj\Debug\net8.0\Faturamento.Application.pdb
 F:\KorpERP\back-end\KorpERP\Faturamento.Application\obj\Debug\net8.0\ref\Faturamento.Application.dll
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\obj\Debug\net8.0\Faturamento.Application.sourcelink.json

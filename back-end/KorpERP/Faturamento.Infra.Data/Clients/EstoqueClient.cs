@@ -1,25 +1,28 @@
-﻿using Faturamento.Application.Interfaces;
+using System.Net.Http.Json;
+using Estoque.Application.DTOs.Response;
+using Faturamento.Application.Interfaces;
 
-namespace Faturamento.Infra.Data.Clients
+namespace Faturamento.Infra.Data.Clients;
+
+public class EstoqueClient : IEstoqueClient
 {
-    public class EstoqueClient : IEstoqueClient
+    private readonly HttpClient _httpClient;
+
+    public EstoqueClient(HttpClient httpClient)
     {
-        private readonly HttpClient _http;
+        _httpClient = httpClient;
+    }
 
-        public EstoqueClient(HttpClient http)
-        {
-            _http = http;
-        }
+    public async Task ValidarProdutoAsync(string codigo, int quantidade)
+    {
+        var response = await _httpClient.GetAsync($"/api/produtos/{codigo}");
 
-        public async Task DebitarAsync(string codigo, int quantidade)
-        {
-            var response = await _http.PatchAsync($"/api/produtos/{codigo}/debitar?quantidade={quantidade}", null);
+        if (!response.IsSuccessStatusCode)
+            throw new Exception($"Produto {codigo} não encontrado no estoque");
 
-            if (!response.IsSuccessStatusCode)
-            {
-                var erro = await response.Content.ReadAsStringAsync();
-                throw new Exception($"Erro ao debitar estoque: {erro}");
-            }
-        }
+        var produto = await response.Content.ReadFromJsonAsync<ProdutoResponseDto>();
+
+        if (produto!.Saldo < quantidade)
+            throw new Exception($"Saldo insuficiente para o produto {codigo}");
     }
 }

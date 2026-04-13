@@ -3,5 +3,6 @@
 public class ItemNotaResponseDto
 {
     public string CodigoProduto { get; set; }
+    public string DescricaoProduto { get; set; }
     public int Quantidade { get; set; }
 }

@@ -1,0 +1,15 @@
+﻿using Estoque.Domain.Common;
+using Faturamento.Domain.Entities;
+
+namespace Faturamento.Application.Interfaces;
+
+public interface INotaFiscalRepository
+{
+    Task<List<NotaFiscal>> GetAllAsync();
+    Task<NotaFiscal?> GetByIdAsync(Guid id);
+    Task AddAsync(NotaFiscal nota);
+    Task UpdateAsync(NotaFiscal nota);
+    Task<int> ProximoNumeroAsync();
+    Task<PagedResult<NotaFiscal>> GetPagedAsync(int pagina, int tamanhoPagina);
+
+}

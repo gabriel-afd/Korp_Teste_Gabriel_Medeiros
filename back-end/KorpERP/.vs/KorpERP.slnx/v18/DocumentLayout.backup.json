@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "F:\\KorpERP\\back-end\\KorpERP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F5471D68-728C-61E2-BB8D-03AAB592409C}|Faturamento.Api\\Faturamento.Api.csproj|f:\\korperp\\back-end\\korperp\\faturamento.api\\controllers\\notasfiscaiscontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5471D68-728C-61E2-BB8D-03AAB592409C}|Faturamento.Api\\Faturamento.Api.csproj|solutionrelative:faturamento.api\\controllers\\notasfiscaiscontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B4951C8-B34A-1A70-FB56-D2AA8CB13FDB}|KorpERP\\Estoque.Api.csproj|f:\\korperp\\back-end\\korperp\\korperp\\consumers\\notaimpressaconsumer .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B4951C8-B34A-1A70-FB56-D2AA8CB13FDB}|KorpERP\\Estoque.Api.csproj|solutionrelative:korperp\\consumers\\notaimpressaconsumer .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA0811EE-0CD4-3BD0-1A07-C71A898DA95C}|Faturamento.Application\\Faturamento.Application.csproj|f:\\korperp\\back-end\\korperp\\faturamento.application\\services\\notafiscalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA0811EE-0CD4-3BD0-1A07-C71A898DA95C}|Faturamento.Application\\Faturamento.Application.csproj|solutionrelative:faturamento.application\\services\\notafiscalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2D6954C-6F03-48A2-253C-3B02E698C38E}|Faturamento.Infra.Data\\Faturamento.Infra.Data.csproj|f:\\korperp\\back-end\\korperp\\faturamento.infra.data\\repositories\\notafiscalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2D6954C-6F03-48A2-253C-3B02E698C38E}|Faturamento.Infra.Data\\Faturamento.Infra.Data.csproj|solutionrelative:faturamento.infra.data\\repositories\\notafiscalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85BE1902-FC98-E1DB-68F5-D334DCFFCD8E}|Faturamento.Domain\\Faturamento.Domain.csproj|f:\\korperp\\back-end\\korperp\\faturamento.domain\\entities\\itemnota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85BE1902-FC98-E1DB-68F5-D334DCFFCD8E}|Faturamento.Domain\\Faturamento.Domain.csproj|solutionrelative:faturamento.domain\\entities\\itemnota.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA0811EE-0CD4-3BD0-1A07-C71A898DA95C}|Faturamento.Application\\Faturamento.Application.csproj|f:\\korperp\\back-end\\korperp\\faturamento.application\\interfaces\\inotafiscalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA0811EE-0CD4-3BD0-1A07-C71A898DA95C}|Faturamento.Application\\Faturamento.Application.csproj|solutionrelative:faturamento.application\\interfaces\\inotafiscalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2D6954C-6F03-48A2-253C-3B02E698C38E}|Faturamento.Infra.Data\\Faturamento.Infra.Data.csproj|f:\\korperp\\back-end\\korperp\\faturamento.infra.data\\messaging\\rabbitmqpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2D6954C-6F03-48A2-253C-3B02E698C38E}|Faturamento.Infra.Data\\Faturamento.Infra.Data.csproj|solutionrelative:faturamento.infra.data\\messaging\\rabbitmqpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2322DB5E-50E5-F0E2-671D-0621890B78F8}|Faturamento.Infra.IoC\\Faturamento.Infra.IoC.csproj|f:\\korperp\\back-end\\korperp\\faturamento.infra.ioc\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2322DB5E-50E5-F0E2-671D-0621890B78F8}|Faturamento.Infra.IoC\\Faturamento.Infra.IoC.csproj|solutionrelative:faturamento.infra.ioc\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,19 +30,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Infra.IoC\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "Faturamento.Infra.IoC\\DependencyInjection.cs",
+              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Infra.IoC\\DependencyInjection.cs",
+              "RelativeToolTip": "Faturamento.Infra.IoC\\DependencyInjection.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T14:19:03.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RabbitMqPublisher.cs",
+              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Infra.Data\\Messaging\\RabbitMqPublisher.cs",
+              "RelativeDocumentMoniker": "Faturamento.Infra.Data\\Messaging\\RabbitMqPublisher.cs",
+              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Infra.Data\\Messaging\\RabbitMqPublisher.cs",
+              "RelativeToolTip": "Faturamento.Infra.Data\\Messaging\\RabbitMqPublisher.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T14:18:50.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ItemNota.cs",
+              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Domain\\Entities\\ItemNota.cs",
+              "RelativeDocumentMoniker": "Faturamento.Domain\\Entities\\ItemNota.cs",
+              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Domain\\Entities\\ItemNota.cs",
+              "RelativeToolTip": "Faturamento.Domain\\Entities\\ItemNota.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:15:44.853Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "NotasFiscaisController .cs",
-              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Api\\Controllers\\NotasFiscaisController .cs",
-              "RelativeDocumentMoniker": "Faturamento.Api\\Controllers\\NotasFiscaisController .cs",
-              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Api\\Controllers\\NotasFiscaisController .cs",
-              "RelativeToolTip": "Faturamento.Api\\Controllers\\NotasFiscaisController .cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
+              "Title": "NotaImpressaConsumer .cs",
+              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\KorpERP\\Consumers\\NotaImpressaConsumer .cs",
+              "RelativeDocumentMoniker": "KorpERP\\Consumers\\NotaImpressaConsumer .cs",
+              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\KorpERP\\Consumers\\NotaImpressaConsumer .cs",
+              "RelativeToolTip": "KorpERP\\Consumers\\NotaImpressaConsumer .cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAowDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T00:49:46.824Z",
+              "WhenOpened": "2026-04-13T01:43:25.601Z",
               "EditorCaption": ""
             },
             {
@@ -49,39 +96,9 @@
               "RelativeDocumentMoniker": "Faturamento.Application\\Services\\NotaFiscalService.cs",
               "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Application\\Services\\NotaFiscalService.cs",
               "RelativeToolTip": "Faturamento.Application\\Services\\NotaFiscalService.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAQwCsAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T00:46:35.329Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NotaFiscalRepository.cs",
-              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Infra.Data\\Repositories\\NotaFiscalRepository.cs",
-              "RelativeDocumentMoniker": "Faturamento.Infra.Data\\Repositories\\NotaFiscalRepository.cs",
-              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Infra.Data\\Repositories\\NotaFiscalRepository.cs",
-              "RelativeToolTip": "Faturamento.Infra.Data\\Repositories\\NotaFiscalRepository.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAkwDoAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T00:45:17.358Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "INotaFiscalRepository.cs",
-              "DocumentMoniker": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Application\\Interfaces\\INotaFiscalRepository.cs",
-              "RelativeDocumentMoniker": "Faturamento.Application\\Interfaces\\INotaFiscalRepository.cs",
-              "ToolTip": "F:\\KorpERP\\back-end\\KorpERP\\Faturamento.Application\\Interfaces\\INotaFiscalRepository.cs",
-              "RelativeToolTip": "Faturamento.Application\\Interfaces\\INotaFiscalRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T00:44:52.838Z",
+              "WhenOpened": "2026-04-13T01:38:58.907Z",
               "EditorCaption": ""
             }
           ]

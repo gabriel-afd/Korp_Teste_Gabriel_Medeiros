@@ -17,3 +17,4 @@ F:\KorpERP\back-end\KorpERP\Estoque.Infra.IoC\obj\Debug\net8.0\Estoque.Infra.IoC
 F:\KorpERP\back-end\KorpERP\Estoque.Infra.IoC\obj\Debug\net8.0\refint\Estoque.Infra.IoC.dll
 F:\KorpERP\back-end\KorpERP\Estoque.Infra.IoC\obj\Debug\net8.0\Estoque.Infra.IoC.pdb
 F:\KorpERP\back-end\KorpERP\Estoque.Infra.IoC\obj\Debug\net8.0\ref\Estoque.Infra.IoC.dll
+F:\KorpERP\back-end\KorpERP\Estoque.Infra.IoC\obj\Debug\net8.0\Estoque.Infra.IoC.sourcelink.json

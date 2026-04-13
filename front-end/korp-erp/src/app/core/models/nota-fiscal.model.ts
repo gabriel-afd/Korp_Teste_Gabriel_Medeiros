@@ -8,9 +8,17 @@ export interface NotaFiscal {
 
 export interface ItemNota {
   codigoProduto: string;
+  descricao?: string;
+  descricaoProduto?: string;
+  quantidade: number;
+}
+
+export interface CriarItemNotaDto {
+  codigoProduto: string;
+  descricao: string;
   quantidade: number;
 }
 
 export interface CriarNotaFiscalDto {
-  itens: ItemNota[];
+  itens: CriarItemNotaDto[];
 }
