@@ -1,0 +1,69 @@
+$color-viasoft-blue: #2c3e50;
+$color-viasoft-pink: #ed1c24;
+$color-bg-light: #ffffff;
+$color-text-light: #7f8c8d;
+$color-hover: #c9cccf;
+
+.sidenav-container {
+  background-color: $color-bg-light;
+  color: $color-viasoft-blue;
+  height: 100%;
+  border-right: 1.5px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+
+  .logo-header {
+    background-color: $color-viasoft-blue;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    .logo-text {
+      font-weight: bold;
+      font-size: 30px;
+      margin: 0;
+      color: $color-bg-light;
+    }
+
+    .logo-highlight {
+      color: $color-viasoft-pink;
+    }
+
+    .logo-subtitle {
+      font-size: 20px;
+      margin: 0;
+      color: $color-text-light;
+    }
+  }
+
+  .nav-list {
+    padding: 10px 8px 0;
+    box-sizing: border-box;
+
+    .nav-item {
+      color: $color-viasoft-blue;
+      font-weight: bold;
+      margin: 2px 0;
+      width: 100%;
+      box-sizing: border-box;
+      transition: background-color 0.2s ease;
+
+      mat-icon {
+        color: rgba($color-viasoft-blue, 0.7);
+        margin-right: 8px;
+      }
+
+      &:hover {
+        background-color: $color-hover;
+      }
+
+      &.active-link {
+        color: $color-viasoft-pink;
+        font-weight: 500;
+
+        mat-icon {
+          color: $color-viasoft-pink;
+        }
+      }
+    }
+  }
+}

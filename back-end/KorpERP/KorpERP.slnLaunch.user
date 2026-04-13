@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "EstouqeAPI - FaturamentoAPI",
+    "Projects": [
+      {
+        "Path": "Faturamento.Api\\Faturamento.Api.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "KorpERP\\Estoque.Api.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      }
+    ]
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Faturamento.Application/1.0.0": {
+        "dependencies": {
+          "Faturamento.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Faturamento.Application.dll": {}
+        }
+      },
+      "Faturamento.Domain/1.0.0": {
+        "runtime": {
+          "Faturamento.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Faturamento.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Faturamento.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

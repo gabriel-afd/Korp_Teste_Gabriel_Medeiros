@@ -1,0 +1,15 @@
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\bin\Debug\net8.0\Faturamento.Application.deps.json
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\bin\Debug\net8.0\Faturamento.Application.dll
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\bin\Debug\net8.0\Faturamento.Application.pdb
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\bin\Debug\net8.0\Faturamento.Domain.dll
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\bin\Debug\net8.0\Faturamento.Domain.pdb
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\obj\Debug\net8.0\Faturamento.Application.csproj.AssemblyReference.cache
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\obj\Debug\net8.0\Faturamento.Application.GeneratedMSBuildEditorConfig.editorconfig
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\obj\Debug\net8.0\Faturamento.Application.AssemblyInfoInputs.cache
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\obj\Debug\net8.0\Faturamento.Application.AssemblyInfo.cs
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\obj\Debug\net8.0\Faturamento.Application.csproj.CoreCompileInputs.cache
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\obj\Debug\net8.0\Faturame.59106751.Up2Date
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\obj\Debug\net8.0\Faturamento.Application.dll
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\obj\Debug\net8.0\refint\Faturamento.Application.dll
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\obj\Debug\net8.0\Faturamento.Application.pdb
+F:\KorpERP\back-end\KorpERP\Faturamento.Application\obj\Debug\net8.0\ref\Faturamento.Application.dll

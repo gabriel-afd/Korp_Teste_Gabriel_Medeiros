@@ -1,0 +1,6 @@
+@KorpERP_HostAddress = http://localhost:5127
+
+GET {{KorpERP_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

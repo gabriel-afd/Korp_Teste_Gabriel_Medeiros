@@ -1,0 +1,17 @@
+<div class="sidenav-container">
+  <div class="logo-header">
+    <h2 class="logo-text">KORP <span class="logo-highlight">ERP</span></h2>
+    <p class="logo-subtitle">by Viasoft</p>
+  </div>
+
+  <mat-nav-list class="nav-list">
+    <a mat-list-item [routerLink]="['/produtos']" routerLinkActive="active-link" class="nav-item">
+      <mat-icon matListItemIcon>inventory_2</mat-icon>
+      <span matListItemTitle>Produtos</span>
+    </a>
+    <a mat-list-item [routerLink]="['/notas-fiscais']" routerLinkActive="active-link" class="nav-item">
+      <mat-icon matListItemIcon>description</mat-icon>
+      <span matListItemTitle>Notas Fiscais</span>
+    </a>
+  </mat-nav-list>
+</div>

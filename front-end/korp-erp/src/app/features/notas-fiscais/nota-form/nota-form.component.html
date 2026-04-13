@@ -1,0 +1,62 @@
+<h2 mat-dialog-title class="dialog-title">Nova Nota Fiscal</h2>
+
+<mat-dialog-content class="dialog-content">
+  <form [formGroup]="itemForm" class="add-item-form">
+    <mat-form-field appearance="outline" class="field-produto">
+      <mat-label>Produto</mat-label>
+      <mat-select formControlName="codigoProduto">
+        @for (p of produtos(); track p.codigo) {
+          <mat-option [value]="p.codigo">
+            {{ p.descricao }} (saldo: {{ p.saldo }})
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="field-qtd">
+      <mat-label>Qtd</mat-label>
+      <input matInput type="number" formControlName="quantidade" min="1" />
+    </mat-form-field>
+
+    <button mat-icon-button class="btn-add-item" type="button" (click)="adicionarItem()" [disabled]="itemForm.invalid">
+      <mat-icon>add</mat-icon>
+    </button>
+  </form>
+
+  <div class="table-container">
+    <table mat-table [dataSource]="itens()">
+      <ng-container matColumnDef="produto">
+        <th mat-header-cell *matHeaderCellDef>Produto</th>
+        <td mat-cell *matCellDef="let i">{{ descricaoProduto(i.codigoProduto) }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="qtd">
+        <th mat-header-cell *matHeaderCellDef>Qtd</th>
+        <td mat-cell *matCellDef="let i">{{ i.quantidade }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let i" class="text-right">
+          <button mat-icon-button color="warn" (click)="removerItem(i.codigoProduto)">
+            <mat-icon>close</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['produto', 'qtd', 'acoes']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['produto', 'qtd', 'acoes']"></tr>
+    </table>
+  </div>
+
+  @if (itens().length === 0) {
+    <p class="empty-msg">Nenhum produto adicionado.</p>
+  }
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-flat-button class="btn-salvar" (click)="salvar()" [disabled]="itens().length === 0">
+    Salvar Nota
+  </button>
+</mat-dialog-actions>

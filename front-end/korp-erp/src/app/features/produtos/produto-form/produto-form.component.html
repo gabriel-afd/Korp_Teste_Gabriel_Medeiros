@@ -1,0 +1,29 @@
+<h2 mat-dialog-title class="dialog-title">Novo Produto</h2>
+
+<mat-dialog-content class="dialog-content">
+  <form [formGroup]="form" class="product-form">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Código</mat-label>
+      <input matInput formControlName="codigo" placeholder="Ex: P006" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Descrição</mat-label>
+      <input matInput formControlName="descricao" placeholder="Ex: Monitor 24 polegadas" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Saldo inicial</mat-label>
+      <input matInput type="number" formControlName="saldo" placeholder="0" />
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-flat-button class="btn-salvar" (click)="salvar()" [disabled]="form.invalid">
+    Salvar Produto
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,12 @@
+<Solution>
+  <Project Path="Estoque.Application/Estoque.Application.csproj" />
+  <Project Path="Estoque.Domain/Estoque.Domain.csproj" />
+  <Project Path="Estoque.Infra.Data/Estoque.Infra.Data.csproj" />
+  <Project Path="Estoque.Infra.IoC/Estoque.Infra.IoC.csproj" />
+  <Project Path="Faturamento.Api/Faturamento.Api.csproj" />
+  <Project Path="Faturamento.Application/Faturamento.Application.csproj" />
+  <Project Path="Faturamento.Domain/Faturamento.Domain.csproj" />
+  <Project Path="Faturamento.Infra.Data/Faturamento.Infra.Data.csproj" />
+  <Project Path="Faturamento.Infra.IoC/Faturamento.Infra.IoC.csproj" />
+  <Project Path="KorpERP/Estoque.Api.csproj" />
+</Solution>

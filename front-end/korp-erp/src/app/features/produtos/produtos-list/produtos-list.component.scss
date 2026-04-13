@@ -1,0 +1,127 @@
+$color-viasoft-blue: #2c3e50;
+$color-viasoft-pink: #ed1c24;
+$color-bg-light: #ffffff;
+$color-text-light: #7f8c8d;
+$color-hover: #c9cccf;
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  h2 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 700;
+  }
+}
+
+.table-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 180px);
+  position: relative;
+}
+
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.table-scroll {
+  flex: 1 1 auto;
+  max-height: calc(100vh - 280px);
+  overflow-y: auto;
+  overflow-x: auto;
+  min-height: 0;
+}
+
+.btn-novo.mat-mdc-unelevated-button {
+  --mdc-filled-button-container-color: #{$color-viasoft-blue};
+  --mdc-filled-button-label-text-color: #{$color-bg-light};
+  font-weight: 700;
+  border-radius: 8px;
+
+  &:hover {
+
+    --mdc-filled-button-label-text-color: #{$color-viasoft-blue};
+    --mdc-filled-button-container-color: #{$color-bg-light};
+  }
+}
+
+.mat-mdc-table {
+  width: 100%;
+  font-size: 16px;
+
+  .mat-mdc-header-row {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: #f9fafb;
+  }
+
+  .mat-mdc-header-cell {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 16px;
+    text-align: center;
+    padding: 18px 12px;
+    background: #f9fafb;
+    position: sticky;
+    top: 0;
+    z-index: 4;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .mat-mdc-cell {
+    padding: 18px 12px;
+    color: #1f2937;
+    font-size: 16px;
+    text-align: center;
+    border-bottom: 1px solid #eef2f7;
+  }
+
+  .mat-mdc-row:hover {
+    background: #f8fbff;
+  }
+}
+
+.loading-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+::ng-deep .produtos-paginator {
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: $color-viasoft-blue;
+  font-size: 15px;
+  flex-shrink: 0;
+
+  .mat-mdc-paginator-page-size-label,
+  .mat-mdc-paginator-range-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: $color-viasoft-blue;
+  }
+
+  .mat-mdc-select-value,
+  .mat-mdc-select-arrow,
+  .mat-mdc-icon-button {
+    color: $color-viasoft-blue;
+  }
+}

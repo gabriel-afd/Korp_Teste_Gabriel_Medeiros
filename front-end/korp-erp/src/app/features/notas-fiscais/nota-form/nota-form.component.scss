@@ -1,0 +1,54 @@
+$color-viasoft-blue: #2c3e50;
+$color-viasoft-pink: #ed1c24;
+$color-salvar: #065818ab;
+
+.dialog-title { color: $color-viasoft-blue; border-bottom: 1px solid #e5e7eb; padding: 16px 24px; }
+.dialog-content { padding-top: 24px !important; }
+
+.add-item-form {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+
+  .field-produto { flex: 1; }
+  .field-qtd { width: 100px; }
+}
+
+.btn-add-item {
+  color: $color-viasoft-blue;
+  margin-top: 4px;
+  &:hover { color: $color-viasoft-pink; }
+}
+
+.table-container {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.mat-mdc-table { width: 100%; }
+
+.empty-msg { color: #7f8c8d; font-size: 13px; text-align: center; padding: 16px; }
+
+.dialog-actions { padding: 16px 24px; }
+
+.btn-salvar {
+  --mdc-filled-button-container-color: #{$color-viasoft-blue};
+  --mdc-filled-button-label-text-color: #ffffff;
+  --mdc-filled-button-hover-container-color: #{$color-salvar};
+  border-radius: 8px;
+  font-weight: 600;
+
+  &:hover:not([disabled]) {
+    --mdc-filled-button-container-color: #{$color-salvar};
+  }
+
+  &:disabled {
+    --mdc-filled-button-container-color: #cccccc;
+    --mdc-filled-button-label-text-color: #666666;
+  }
+}
+
+.text-right { text-align: right; }

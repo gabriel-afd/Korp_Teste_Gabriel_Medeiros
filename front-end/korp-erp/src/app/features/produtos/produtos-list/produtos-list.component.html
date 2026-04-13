@@ -1,0 +1,47 @@
+<div class="page-header">
+  <h2>Produtos</h2>
+  <button mat-flat-button class="btn-novo" (click)="abrirModal()">
+    + Novo Produto
+  </button>
+</div>
+
+<div class="table-container">
+  @if (produtoService.loading()) {
+    <div class="loading-overlay">
+      <mat-spinner diameter="40" />
+    </div>
+  }
+
+    <div class="table-scroll">
+      <table mat-table [dataSource]="produtoService.produtos()" class="mat-elevation-z2">
+
+        <ng-container matColumnDef="codigo">
+          <th mat-header-cell *matHeaderCellDef> Código </th>
+          <td mat-cell *matCellDef="let p"> {{ p.codigo }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="descricao">
+          <th mat-header-cell *matHeaderCellDef> Descrição </th>
+          <td mat-cell *matCellDef="let p"> {{ p.descricao }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="saldo">
+          <th mat-header-cell *matHeaderCellDef> Saldo em Estoque </th>
+          <td mat-cell *matCellDef="let p"> {{ p.saldo }} un </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+        <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+      </table>
+    </div>
+
+    <mat-paginator
+    class="produtos-paginator"
+    [length]="produtoService.total()"
+    [pageIndex]="paginaAtual() - 1"
+    [pageSize]="tamanhoPagina()"
+    [pageSizeOptions]="[5, 10, 20]"
+    (page)="onPageChange($event)"
+    showFirstLastButtons />
+
+</div>

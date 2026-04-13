@@ -1,0 +1,11 @@
+F:\KorpERP\back-end\KorpERP\Faturamento.Domain\bin\Debug\net8.0\Faturamento.Domain.deps.json
+F:\KorpERP\back-end\KorpERP\Faturamento.Domain\bin\Debug\net8.0\Faturamento.Domain.dll
+F:\KorpERP\back-end\KorpERP\Faturamento.Domain\bin\Debug\net8.0\Faturamento.Domain.pdb
+F:\KorpERP\back-end\KorpERP\Faturamento.Domain\obj\Debug\net8.0\Faturamento.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\KorpERP\back-end\KorpERP\Faturamento.Domain\obj\Debug\net8.0\Faturamento.Domain.AssemblyInfoInputs.cache
+F:\KorpERP\back-end\KorpERP\Faturamento.Domain\obj\Debug\net8.0\Faturamento.Domain.AssemblyInfo.cs
+F:\KorpERP\back-end\KorpERP\Faturamento.Domain\obj\Debug\net8.0\Faturamento.Domain.csproj.CoreCompileInputs.cache
+F:\KorpERP\back-end\KorpERP\Faturamento.Domain\obj\Debug\net8.0\Faturamento.Domain.dll
+F:\KorpERP\back-end\KorpERP\Faturamento.Domain\obj\Debug\net8.0\refint\Faturamento.Domain.dll
+F:\KorpERP\back-end\KorpERP\Faturamento.Domain\obj\Debug\net8.0\Faturamento.Domain.pdb
+F:\KorpERP\back-end\KorpERP\Faturamento.Domain\obj\Debug\net8.0\ref\Faturamento.Domain.dll

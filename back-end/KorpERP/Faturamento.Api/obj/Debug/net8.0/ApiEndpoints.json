@@ -1,0 +1,71 @@
+[
+  {
+    "ContainingType": "Faturamento.Api.Controllers.NotasFiscaisController",
+    "Method": "GetAll",
+    "RelativePath": "api/NotasFiscais",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "tamanhoPagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Faturamento.Api.Controllers.NotasFiscaisController",
+    "Method": "Criar",
+    "RelativePath": "api/NotasFiscais",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Faturamento.Application.DTOs.Create.NotaFiscalCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Faturamento.Api.Controllers.NotasFiscaisController",
+    "Method": "GetById",
+    "RelativePath": "api/NotasFiscais/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Faturamento.Api.Controllers.NotasFiscaisController",
+    "Method": "Imprimir",
+    "RelativePath": "api/NotasFiscais/{id}/imprimir",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

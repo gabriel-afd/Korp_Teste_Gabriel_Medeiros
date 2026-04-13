@@ -1,0 +1,69 @@
+@if (isBrowser) {
+  <div class="page-header">
+    <h2>Notas Fiscais</h2>
+    <button mat-flat-button class="btn-novo" (click)="abrirModal()">
+      + Nova Nota
+    </button>
+  </div>
+
+  <div class="table-container">
+    @if (notaService.loading()) {
+      <div class="loading-overlay">
+        <mat-spinner diameter="40" />
+      </div>
+    }
+
+      <div class="table-scroll">
+        <table mat-table [dataSource]="notaService.notas()">
+
+          <ng-container matColumnDef="numero">
+            <th mat-header-cell *matHeaderCellDef> Nº </th>
+            <td mat-cell *matCellDef="let n"> #{{ n.numero }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="data">
+            <th mat-header-cell *matHeaderCellDef> Emissão </th>
+            <td mat-cell *matCellDef="let n"> {{ n.data | date:'dd/MM/yyyy' }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let n">
+              <span class="status-badge" [class.aberta]="n.status === 'Aberta'" [class.fechada]="n.status !== 'Aberta'">
+                {{ n.status }}
+              </span>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="acoes">
+            <th mat-header-cell *matHeaderCellDef> </th>
+            <td mat-cell *matCellDef="let n" class="text-center">
+              @if (n.status === 'Aberta') {
+                @if (notaService.imprimindo() === n.id) {
+                  <div class="spinner-small">
+                    <mat-spinner diameter="24" />
+                  </div>
+                } @else {
+                  <button mat-icon-button class="btn-acao-print" (click)="imprimir(n.id)" matTooltip="Imprimir nota">
+                    <mat-icon>print</mat-icon>
+                  </button>
+                }
+              }
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+          <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+        </table>
+      </div>
+
+      <mat-paginator
+      class="notas-paginator"
+      [length]="notaService.total()"
+      [pageIndex]="paginaAtual() - 1"
+      [pageSize]="tamanhoPagina()"
+      [pageSizeOptions]="[5, 10, 20]"
+      (page)="onPageChange($event)"
+      showFirstLastButtons />
+  </div>
+}

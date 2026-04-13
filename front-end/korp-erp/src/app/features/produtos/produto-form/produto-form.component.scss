@@ -1,0 +1,44 @@
+$color-viasoft-blue: #2c3e50;
+$color-viasoft-pink: #ed1c24;
+$color-salvar: #065818ab;
+
+.dialog-title {
+  color: $color-viasoft-blue;
+  font-weight: 700;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dialog-content {
+  padding-top: 24px !important;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .full-width {
+    width: 100%;
+  }
+}
+
+.dialog-actions {
+  padding: 16px 24px;
+}
+
+.btn-salvar {
+  background-color: $color-viasoft-blue;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+
+  &:hover:not([disabled]) {
+    background-color: $color-salvar;
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    color: #666;
+  }
+}
