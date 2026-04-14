@@ -108,14 +108,14 @@ Sistema ERP desenvolvido com arquitetura **Clean Architecture** e **Domain-Drive
 
 2. **Execute o Docker Compose:**
    ```bash
-   docker compose up --build
+   docker compose up --build ou docker-compose up --build
    ```
 
 3. **Aguarde a inicialização** (SQL Server, RabbitMQ e ambas as APIs):
    - SQL Server estará disponível em `localhost:1434`
    - RabbitMQ Management em `http://localhost:15672` (user: `guest`, password: `guest`)
-   - Estoque API em `http://localhost:5001`
-   - Faturamento API em `http://localhost:5002`
+   - Estoque API em `http://localhost:5001/swagger/index.html`
+   - Faturamento API em `http://localhost:5002/swagger/index.html`
 
 4. **As migrations são aplicadas automaticamente** via `Database.EnsureCreated()` no `Program.cs` de cada API.
 
@@ -129,7 +129,20 @@ docker compose down
 
 Para limpar volumes (banco de dados será recriado):
 ```bash
-docker compose down -v
+docker compose down -v ou docker-compose down -v
+```
+---
+
+### **Abrindo o MS SQL Server**
+
+
+```
+Nome do Servidor: localhost, 1434
+Autenticação: Autenticação do SQL Server
+Logon: sa
+Senha: Korp@2024!
+
+Marcar a opção "Certificado do Servidor Confiável"
 ```
 
 ---

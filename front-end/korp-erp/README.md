@@ -41,7 +41,7 @@ Aplicação em **Angular** para gestão de notas fiscais, com listagem e cadastr
 ### Com Docker Compose (recomendado)
 
 ```bash
-docker compose up --build
+docker compose up --build ou docker-compose up --build
 ```
 
 A aplicação ficará disponível em **http://localhost:4200**.
