@@ -1,4 +1,5 @@
 using Estoque.Api.Consumers;
+using Estoque.Api.Middlewares;
 using Estoque.Infra.Data.Data;
 using Estoque.Infra.IoC;
 
@@ -36,7 +37,7 @@ using (var scope = app.Services.CreateScope())
 
 app.UseCors("AllowAngular");
 
-app.UseDeveloperExceptionPage();
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

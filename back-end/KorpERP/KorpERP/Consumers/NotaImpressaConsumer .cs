@@ -1,6 +1,10 @@
 ﻿using System.Text;
 using System.Text.Json;
 using Estoque.Application.Services;
+using Estoque.Domain.Entities;
+using Estoque.Domain.Exceptions;
+using Estoque.Infra.Data.Data;
+using Microsoft.EntityFrameworkCore;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
@@ -45,20 +49,34 @@ public class NotaImpressaConsumer : BackgroundService
                 {
                     try
                     {
+                        var messageId = args.BasicProperties?.MessageId
+                            ?? Convert.ToBase64String(args.Body.ToArray());
+
+                        using var scope = _scopeFactory.CreateScope();
+                        var context = scope.ServiceProvider.GetRequiredService<EstoqueDbContext>();
+
+                        if (await context.MensagensProcessadas.AnyAsync(m => m.MessageId == messageId))
+                        {
+                            await _channel.BasicAckAsync(args.DeliveryTag, multiple: false);
+                            return;
+                        }
+
                         var json = Encoding.UTF8.GetString(args.Body.ToArray());
                         var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
                         var evento = JsonSerializer.Deserialize<NotaImpressaEvent>(json, options);
 
                         if (evento?.Itens.Count > 0)
                         {
-                            using var scope = _scopeFactory.CreateScope();
                             var produtoService = scope.ServiceProvider.GetRequiredService<ProdutoService>();
 
                             foreach (var item in evento.Itens)
                             {
-                                await produtoService.DebitarAsync(item.CodigoProduto, item.Quantidade);
+                                await DebitarComRetryAsync(produtoService, item.CodigoProduto, item.Quantidade);
                             }
                         }
+
+                        context.MensagensProcessadas.Add(new MensagemProcessada(messageId));
+                        await context.SaveChangesAsync();
 
                         await _channel.BasicAckAsync(args.DeliveryTag, multiple: false);
                     }
@@ -94,5 +112,21 @@ public class NotaImpressaConsumer : BackgroundService
         if (_channel != null) try { await _channel.CloseAsync(cancellationToken); } catch { }
         if (_connection != null) try { await _connection.CloseAsync(cancellationToken); } catch { }
         await base.StopAsync(cancellationToken);
+    }
+
+    private static async Task DebitarComRetryAsync(ProdutoService service, string codigo, int quantidade, int maxRetries = 3)
+    {
+        for (var tentativa = 1; tentativa <= maxRetries; tentativa++)
+        {
+            try
+            {
+                await service.DebitarAsync(codigo, quantidade);
+                return;
+            }
+            catch (ConcorrenciaException) when (tentativa < maxRetries)
+            {
+                await Task.Delay(100 * tentativa);
+            }
+        }
     }
 }

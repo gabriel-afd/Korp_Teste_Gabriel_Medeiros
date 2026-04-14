@@ -38,7 +38,8 @@ public class RabbitMqPublisher : IEventPublisher, IAsyncDisposable
 
         var properties = new BasicProperties
         {
-            Persistent = true
+            Persistent = true,
+            MessageId = Guid.NewGuid().ToString()
         };
 
         await _channel.BasicPublishAsync(

@@ -1,6 +1,7 @@
 ﻿using Estoque.Domain.Entities;
 using Estoque.Infra.Data.Data;
 using Estoque.Application.Interfaces;
+using Estoque.Domain.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using Estoque.Domain.Common;
 
@@ -39,8 +40,15 @@ namespace Estoque.Infra.Data.Repositories
 
         public async Task UpdateAsync(Produto produto)
         {
-            _context.Produtos.Update(produto);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Produtos.Update(produto);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw new ConcorrenciaException();
+            }
         }
 
         public async Task<PagedResult<Produto>> GetPagedAsync(int pagina, int tamanhoPagina)

@@ -2,6 +2,7 @@
 using Estoque.Application.DTOs.Create;
 using Estoque.Application.DTOs.Response;
 using Estoque.Application.Interfaces;
+using Estoque.Application.Mappers;
 using Estoque.Domain.Common;
 using Estoque.Domain.Entities;
 using Estoque.Domain.Exceptions;
@@ -21,19 +22,7 @@ public class ProdutoService
     {
         var result = await _repository.GetPagedAsync(pagina, tamanhoPagina);
 
-        return new PagedResult<ProdutoResponseDto>
-        {
-            Items = result.Items.Select(p => new ProdutoResponseDto
-            {
-                Id = p.Id,
-                Codigo = p.Codigo,
-                Descricao = p.Descricao,
-                Saldo = p.Saldo
-            }).ToList(),
-            Total = result.Total,
-            Pagina = result.Pagina,
-            TamanhoPagina = result.TamanhoPagina
-        };
+        return ProdutoMapper.ToPagedResult(result);
     }
 
     public async Task<ProdutoResponseDto?> GetByCodigoAsync(string codigo)
@@ -43,13 +32,7 @@ public class ProdutoService
         if (produto == null)
             throw new ProdutoNaoEncontradoException();
 
-        return new ProdutoResponseDto
-        {
-            Id = produto.Id,
-            Codigo = produto.Codigo,
-            Descricao = produto.Descricao,
-            Saldo = produto.Saldo
-        };
+        return ProdutoMapper.ToResponseDto(produto);
     }
 
     public async Task<ProdutoResponseDto> CriarAsync(ProdutoCreateDto dto)
@@ -57,13 +40,7 @@ public class ProdutoService
         var produto = new Produto(dto.Codigo, dto.Descricao, dto.Saldo);
         await _repository.AddAsync(produto);
 
-        return new ProdutoResponseDto
-        {
-            Id = produto.Id,
-            Codigo = produto.Codigo,
-            Descricao = produto.Descricao,
-            Saldo = produto.Saldo
-        };
+        return ProdutoMapper.ToResponseDto(produto);
     }
 
     public async Task DebitarAsync(string codigo, int quantidade)

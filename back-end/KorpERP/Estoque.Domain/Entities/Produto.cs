@@ -8,6 +8,7 @@ public class Produto
     public string Codigo { get; private set; }
     public string Descricao { get; private set; }
     public int Saldo { get; private set; }
+    public byte[] RowVersion { get; private set; } = null!;
 
     public Produto(string codigo, string descricao, int saldo)
     {

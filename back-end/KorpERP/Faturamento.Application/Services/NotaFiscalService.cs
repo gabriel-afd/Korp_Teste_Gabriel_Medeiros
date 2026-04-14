@@ -1,6 +1,7 @@
 ﻿using Faturamento.Application.DTOs.Create;
 using Faturamento.Application.DTOs.Response;
 using Faturamento.Application.Interfaces;
+using Faturamento.Application.Mappers;
 using Faturamento.Application.Messaging;
 using Faturamento.Domain.Common;
 using Faturamento.Domain.Entities;
@@ -26,25 +27,7 @@ namespace Faturamento.Application.Services
         {
             var result = await _repository.GetPagedAsync(pagina, tamanhoPagina);
 
-            return new PagedResult<NotaFiscalResponseDto>
-            {
-                Items = result.Items.Select(n => new NotaFiscalResponseDto
-                {
-                    Id = n.Id,
-                    Numero = n.Numero,
-                    Status = n.Status.ToString(),
-                    Data = n.Data,
-                    Itens = n.Itens.Select(i => new ItemNotaResponseDto
-                    {
-                        CodigoProduto = i.CodigoProduto,
-                        DescricaoProduto = i.DescricaoProduto,
-                        Quantidade = i.Quantidade
-                    }).ToList()
-                }).ToList(),
-                Total = result.Total,
-                Pagina = result.Pagina,
-                TamanhoPagina = result.TamanhoPagina
-            };
+            return NotaFiscalMapper.ToPagedResult(result);
         }
 
         public async Task<NotaFiscalResponseDto?> GetByIdAsync(Guid id)
@@ -54,19 +37,7 @@ namespace Faturamento.Application.Services
             if (nota == null)
                 throw new NotaFiscalNaoEncontradaException();
 
-            return new NotaFiscalResponseDto
-            {
-                Id = nota.Id,
-                Numero = nota.Numero,
-                Status = nota.Status.ToString(),
-                Data = nota.Data,
-                Itens = nota.Itens.Select(i => new ItemNotaResponseDto
-                {
-                    CodigoProduto = i.CodigoProduto,
-                    DescricaoProduto = i.DescricaoProduto,
-                    Quantidade = i.Quantidade
-                }).ToList()
-            };
+            return NotaFiscalMapper.ToResponseDto(nota);
         }
 
         public async Task<NotaFiscalResponseDto> CriarAsync(NotaFiscalCreateDto dto)
@@ -77,7 +48,7 @@ namespace Faturamento.Application.Services
 
             foreach (var item in dto.Itens)
             {
-                nota.AdicionarItem(item.CodigoProduto,item.Descricao ,item.Quantidade);
+                nota.AdicionarItem(item.CodigoProduto, item.Descricao, item.Quantidade);
             }
 
             await _repository.AddAsync(nota);
@@ -87,19 +58,7 @@ namespace Faturamento.Application.Services
                 await _estoqueClient.ValidarProdutoAsync(item.CodigoProduto, item.Quantidade);
             }
 
-            return new NotaFiscalResponseDto
-            {
-                Id = nota.Id,
-                Numero = nota.Numero,
-                Status = nota.Status.ToString(),
-                Data = nota.Data,
-                Itens = nota.Itens.Select(i => new ItemNotaResponseDto
-                {
-                    CodigoProduto = i.CodigoProduto,
-                    DescricaoProduto = i.DescricaoProduto,
-                    Quantidade = i.Quantidade
-                }).ToList()
-            };
+            return NotaFiscalMapper.ToResponseDto(nota);
         }
 
         public async Task ImprimirAsync(Guid id)
@@ -112,18 +71,15 @@ namespace Faturamento.Application.Services
             if (nota.Status == StatusNota.Fechada)
                 throw new NotaFiscalJaFechadaException();
 
+            foreach (var item in nota.Itens)
+            {
+                await _estoqueClient.ValidarProdutoAsync(item.CodigoProduto, item.Quantidade);
+            }
+
             nota.Fechar();
             await _repository.UpdateAsync(nota);
 
-            var evento = new NotaImpressaEvent
-            {
-                NotaId = nota.Id,
-                Itens = nota.Itens.Select(i => new ItemNotaEvent
-                {
-                    CodigoProduto = i.CodigoProduto,
-                    Quantidade = i.Quantidade
-                }).ToList()
-            };
+            var evento = NotaFiscalMapper.ToEvent(nota);
 
             await _eventPublisher.PublishAsync(evento, "nota-impressa");
         }

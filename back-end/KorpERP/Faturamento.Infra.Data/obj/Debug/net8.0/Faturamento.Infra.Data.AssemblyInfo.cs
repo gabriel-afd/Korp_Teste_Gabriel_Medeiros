@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Faturamento.Infra.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46997f16482ba7bcbcb01de651508188dd4e17b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2840c0886c118fe8433a9c67e198c0f74eb1744c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Faturamento.Infra.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Faturamento.Infra.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -22,6 +22,19 @@ namespace Estoque.Infra.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Estoque.Domain.Entities.MensagemProcessada", b =>
+                {
+                    b.Property<string>("MessageId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("ProcessadaEm")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("MessageId");
+
+                    b.ToTable("MensagensProcessadas");
+                });
+
             modelBuilder.Entity("Estoque.Domain.Entities.Produto", b =>
                 {
                     b.Property<Guid>("Id")
@@ -35,6 +48,12 @@ namespace Estoque.Infra.Data.Migrations
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
 
                     b.Property<int>("Saldo")
                         .HasColumnType("int");

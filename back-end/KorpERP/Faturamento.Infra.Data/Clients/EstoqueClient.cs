@@ -1,5 +1,6 @@
 using System.Net.Http.Json;
 using Estoque.Application.DTOs.Response;
+using Estoque.Domain.Exceptions;
 using Faturamento.Application.Interfaces;
 
 namespace Faturamento.Infra.Data.Clients;
@@ -18,11 +19,11 @@ public class EstoqueClient : IEstoqueClient
         var response = await _httpClient.GetAsync($"/api/produtos/{codigo}");
 
         if (!response.IsSuccessStatusCode)
-            throw new Exception($"Produto {codigo} não encontrado no estoque");
+            throw new ProdutoNaoEncontradoException();
 
         var produto = await response.Content.ReadFromJsonAsync<ProdutoResponseDto>();
 
         if (produto!.Saldo < quantidade)
-            throw new Exception($"Saldo insuficiente para o produto {codigo}");
+            throw new SaldoInsuficienteException();
     }
 }
